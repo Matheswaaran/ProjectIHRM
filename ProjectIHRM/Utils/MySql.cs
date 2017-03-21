@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,8 @@ namespace ProjectIHRM.Utils
 {
     static class MySql
     {
-        static string MySqlDataSource = "datasource=127.0.0.1;port=3306;username=root;password=root;";
-
+        public static string MySqlDataSource = "datasource=127.0.0.1;port=3306;username=root;password=root;";
+        public static MySqlConnection myConn = new MySqlConnection(Utils.MySql.MySqlDataSource);
+        public static MySqlDataReader myReader;
     }
 }

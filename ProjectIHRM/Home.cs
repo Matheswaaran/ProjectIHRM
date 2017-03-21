@@ -20,12 +20,43 @@ namespace ProjectIHRM
 
         private void Home_Load(object sender, EventArgs e)
         {
-            MySqlConnection myConn = new MySqlConnection(Utils.MySql.MySqlDataSource);
+            
         }
 
         private void home_login_Click(object sender, EventArgs e)
         {
-
+            if (string.IsNullOrEmpty(home_txtUsername.Text))
+            {
+                MessageBox.Show("Please enter a username.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                home_txtUsername.Focus();
+                return;
+            }
+            try
+            {
+                string pass = home_txtPassword.Text;
+                string md5pass = Utils.Global.CreateMD5(pass);
+                MySqlCommand select = new MySqlCommand("Select * FROM ihrm.users where username = '" + home_txtUsername.Text + "' and password = '" + md5pass + "';" ,Utils.MySql.myConn);
+                Utils.MySql.myConn.Open();
+                Utils.MySql.myReader = select.ExecuteReader();
+                int count = 0;
+                while (Utils.MySql.myReader.Read())
+                {
+                    count = count + 1;
+                }
+                if (count == 1)
+                {
+                    Utils.Session.setDetails(int.Parse(Utils.MySql.myReader["uid"].ToString()), Utils.MySql.myReader["Username"].ToString());
+                    MessageBox.Show("Login successful as " + Utils.Session.getId().ToString() + " - " + Utils.Session.getUsername().ToString() + ".", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Please enter a valid credentials.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
