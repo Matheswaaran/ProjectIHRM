@@ -16,5 +16,15 @@ namespace ProjectIHRM
         {
             InitializeComponent();
         }
+
+        private void Home_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void home_login_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
