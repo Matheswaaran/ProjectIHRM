@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,7 @@ namespace ProjectIHRM
 
         private void Home_Load(object sender, EventArgs e)
         {
-
+            MySqlConnection myConn = new MySqlConnection(Utils.MySql.MySqlDataSource);
         }
 
         private void home_login_Click(object sender, EventArgs e)
