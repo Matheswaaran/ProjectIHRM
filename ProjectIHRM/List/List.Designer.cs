@@ -1,4 +1,4 @@
-﻿namespace ProjectIHRM.Home
+﻿namespace ProjectIHRM.List
 {
     partial class List
     {
@@ -61,7 +61,7 @@
             this.Seperator1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Seperator1.Location = new System.Drawing.Point(760, 64);
             this.Seperator1.Name = "Seperator1";
-            this.Seperator1.Size = new System.Drawing.Size(282, 1);
+            this.Seperator1.Size = new System.Drawing.Size(282, 2);
             this.Seperator1.TabIndex = 5;
             // 
             // List

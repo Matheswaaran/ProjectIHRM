@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProjectIHRM.Home
+namespace ProjectIHRM.List
 {
     public partial class List : Form
     {
@@ -29,9 +29,9 @@ namespace ProjectIHRM.Home
 
         private void list_web_Click(object sender, EventArgs e)
         {
-            SqlCommand list_select = new SqlCommand("SELECT * FROM site_table;");
-            Utils.MySql.myConn.Open();
-            SqlDataReader lsitReader = list_select.ExecuteReader();
+            this.Hide();
+            siteList siteform = new siteList();
+            siteform.Show();
         }
     }
 }
