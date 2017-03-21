@@ -10,7 +10,7 @@ namespace ProjectIHRM.Utils
     static class MySql
     {
         public static string MySqlDataSource = "datasource=127.0.0.1;port=3306;username=root;password=root;";
-        public static MySqlConnection myConn = new MySqlConnection(Utils.MySql.MySqlDataSource);
-        public static MySqlDataReader myReader;
+        public static MySqlConnection myConn = new MySqlConnection(MySqlDataSource);
+        //public static MySqlDataReader myReader;
     }
 }
