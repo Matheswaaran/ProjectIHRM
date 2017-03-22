@@ -53,6 +53,18 @@
     <Compile Include="Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
+    <Compile Include="List\contractorList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="List\contractorList.Designer.cs">
+      <DependentUpon>contractorList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="List\employeeList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="List\employeeList.Designer.cs">
+      <DependentUpon>employeeList.cs</DependentUpon>
+    </Compile>
     <Compile Include="List\List.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,19 +77,50 @@
     <Compile Include="List\siteList.Designer.cs">
       <DependentUpon>siteList.cs</DependentUpon>
     </Compile>
+    <Compile Include="List\supervisourList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="List\supervisourList.Designer.cs">
+      <DependentUpon>supervisourList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="List\supervisourRequests.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="List\supervisourRequests.Designer.cs">
+      <DependentUpon>supervisourRequests.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sample\Dynamic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sample\Dynamic.Designer.cs">
+      <DependentUpon>Dynamic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\Clone.cs" />
     <Compile Include="Utils\Global.cs" />
     <Compile Include="Utils\MySql.cs" />
     <Compile Include="Utils\Session.cs" />
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="List\contractorList.resx">
+      <DependentUpon>contractorList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="List\employeeList.resx">
+      <DependentUpon>employeeList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="List\List.resx">
       <DependentUpon>List.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="List\siteList.resx">
       <DependentUpon>siteList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="List\supervisourList.resx">
+      <DependentUpon>supervisourList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="List\supervisourRequests.resx">
+      <DependentUpon>supervisourRequests.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -89,6 +132,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Sample\Dynamic.resx">
+      <DependentUpon>Dynamic.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
