@@ -1,5 +1,4 @@
-﻿using ProjectIHRM.Utils;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,29 +19,13 @@ namespace ProjectIHRM.Sample
 
         private void Dynamic_Load(object sender, EventArgs e)
         {
-        }
-
-        private void list_web_Click(object sender, EventArgs e)
-        {
-            var n = 5;
-            for (int i = 0; i < n; i++)
-            {
-                //Create label
-                Label label = new Label();
-                label.Text = String.Format("Label {0}", i);
-                //Position label on screen
-                label.Left = 10;
-                label.Top = (i + 1) * 20;
-                //Create textbox
-                TextBox textBox = new TextBox();
-                //Position textbox on screen
-                textBox.Left = 120;
-                textBox.Top = (i + 1) * 20;
-                //Add controls to form
-                this.Controls.Add(label);
-                this.Controls.Add(textBox);
+            WFUserControl control = new WFUserControl();
+            for (int i = 0; i < 5; i++) { 
+                int a=0, b=0;
+                tableLayoutPanel1.Controls.Add(control,a,b);
+                a += 1;
+                b += 1;
             }
-
         }
     }
 }
