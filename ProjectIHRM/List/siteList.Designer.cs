@@ -29,22 +29,34 @@
         private void InitializeComponent()
         {
             this.GridView = new System.Windows.Forms.DataGridView();
+            this.site_display = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.GridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // GridView
             // 
             this.GridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridView.Location = new System.Drawing.Point(0, 0);
-            this.GridView.Name = "dataGridView1";
-            this.GridView.Size = new System.Drawing.Size(1025, 490);
+            this.GridView.Name = "GridView";
+            this.GridView.Size = new System.Drawing.Size(913, 490);
             this.GridView.TabIndex = 0;
+            // 
+            // site_display
+            // 
+            this.site_display.Location = new System.Drawing.Point(935, 30);
+            this.site_display.Name = "site_display";
+            this.site_display.Size = new System.Drawing.Size(90, 25);
+            this.site_display.TabIndex = 1;
+            this.site_display.Text = "Display";
+            this.site_display.UseVisualStyleBackColor = true;
+            this.site_display.Click += new System.EventHandler(this.site_display_Click);
             // 
             // siteList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1037, 502);
+            this.Controls.Add(this.site_display);
             this.Controls.Add(this.GridView);
             this.Name = "siteList";
             this.Text = "siteList";
@@ -57,5 +69,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView GridView;
+        private System.Windows.Forms.Button site_display;
     }
 }
