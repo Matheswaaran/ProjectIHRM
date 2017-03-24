@@ -3,25 +3,27 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProjectIHRM.List
+namespace ProjectIHRM.Sample
 {
-    public partial class siteList : Form
+    public partial class DataGrid : Form
     {
-        public siteList()
+        public DataGrid()
         {
             InitializeComponent();
         }
 
-        public object MysqlCommand { get; private set; }
+        private void bunifuCustomDataGrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
-        private void siteList_Load(object sender, EventArgs e)
+        }
+
+        private void DataGrid_Load(object sender, EventArgs e)
         {
             MySqlCommand listSite = new MySqlCommand("SELECT * from hrm_database.site_table;", Utils.MySql.myConn);
             try
@@ -33,10 +35,10 @@ namespace ProjectIHRM.List
                 BindingSource bSource = new BindingSource();
 
                 bSource.DataSource = dt;
-                GridView.DataSource = bSource;
+                bunifuCustomDataGrid1.DataSource = bSource;
                 sda.Update(dt);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -45,28 +47,7 @@ namespace ProjectIHRM.List
             checkBoxColumn.HeaderText = "";
             checkBoxColumn.Width = 30;
             checkBoxColumn.Name = "checkBoxColumn";
-            GridView.Columns.Insert(0, checkBoxColumn);
-        }
-
-        private void site_display_Click(object sender, EventArgs e)
-        {
-            string message = string.Empty;
-            foreach (DataGridViewRow row in GridView.Rows)
-            {
-                bool isSelected = Convert.ToBoolean(row.Cells["checkBoxColumn"].Value);
-                if (isSelected)
-                {
-                    message += Environment.NewLine;
-                    message += row.Cells["Name"].Value.ToString();
-                }
-            }
-
-            MessageBox.Show("Selected Values" + message);
-        }
-
-        private void GridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            bunifuCustomDataGrid1.Columns.Insert(0, checkBoxColumn);
         }
     }
 }

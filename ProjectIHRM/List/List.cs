@@ -37,8 +37,8 @@ namespace ProjectIHRM.List
 
         private void sample_Click(object sender, EventArgs e)
         {
-            Sample.Dynamic dy = new Sample.Dynamic();
-            dy.Show();
+            Sample.DataGrid sl = new Sample.DataGrid();
+            sl.Show();
         }
 
         private void label2_Click(object sender, EventArgs e)

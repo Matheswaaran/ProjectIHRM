@@ -40,6 +40,7 @@
             this.GridView.Name = "GridView";
             this.GridView.Size = new System.Drawing.Size(913, 490);
             this.GridView.TabIndex = 0;
+            this.GridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridView_CellContentClick);
             // 
             // site_display
             // 
