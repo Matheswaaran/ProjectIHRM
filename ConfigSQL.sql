@@ -29,11 +29,11 @@ USE `hrm_database`;
 --
 
 CREATE TABLE `employee_table` (
-  `eid` int(11) NOT NULL,
+  `eid` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
-  `uid` int(11) NOT NULL,
+  `cid` int(11) NOT NULL,
   `auth` int(2) NOT NULL,
-  `aadhar_uid` varchar(20) NOT NULL,
+  `aadhar_eid` varchar(20) NOT NULL,
   `aadhar_string` varchar(1000) NOT NULL,
   `skill` int(5) NOT NULL,
   `emp_type` int(3) NOT NULL,
@@ -47,12 +47,12 @@ CREATE TABLE `employee_table` (
 --
 
 CREATE TABLE `goverment_users` (
-  `gid` int(11) NOT NULL,
+  `gid` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password` varchar(200) NOT NULL,
   `aadhar_gid` varchar(20) NOT NULL,
-  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP 
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -69,7 +69,7 @@ INSERT INTO `goverment_users` (`gid`, `name`, `email`, `password`, `aadhar_gid`,
 --
 
 CREATE TABLE `contract_users` (
-  `cid` int(11) NOT NULL,
+  `cid` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password` varchar(200) NOT NULL,
@@ -84,7 +84,7 @@ CREATE TABLE `contract_users` (
 --
 
 CREATE TABLE `supervisour_users` (
-  `su_id` int(11) NOT NULL,
+  `su_id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password` varchar(200) NOT NULL,
@@ -99,7 +99,7 @@ CREATE TABLE `supervisour_users` (
 --
 
 CREATE TABLE `site_table` (
-  `sid` int(11) NOT NULL,
+  `sid` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `name` varchar(20) NOT NULL,
   `address` varchar(20) NOT NULL,
   `district` varchar(1000) NOT NULL,
@@ -115,7 +115,7 @@ CREATE TABLE `site_table` (
 --
 
 CREATE TABLE `super_req_table` (
-  `rid` int(11) NOT NULL,
+  `rid` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `task_name` varchar(100) NOT NULL,
   `uid` int(11) NOT NULL,
   `date` varchar(20) NOT NULL,
@@ -131,76 +131,76 @@ CREATE TABLE `super_req_table` (
 -- Indexes for dumped tables
 --
 
---
--- Indexes for table `employee_table`
---
-ALTER TABLE `employee_table`
-  ADD PRIMARY KEY (`eid`);
+-- --
+-- -- Indexes for table `employee_table`
+-- --
+-- ALTER TABLE `employee_table`
+--   ADD PRIMARY KEY (`eid`);
 
---
--- Indexes for table `goverment_users`
---
-ALTER TABLE `goverment_users`
-  ADD PRIMARY KEY (`gid`);
+-- --
+-- -- Indexes for table `goverment_users`
+-- --
+-- ALTER TABLE `goverment_users`
+--   ADD PRIMARY KEY (`gid`);
 
---
--- Indexes for table `goverment_users`
---
-ALTER TABLE `contract_users`
-  ADD PRIMARY KEY (`cid`);
+-- --
+-- -- Indexes for table `goverment_users`
+-- --
+-- ALTER TABLE `contract_users`
+--   ADD PRIMARY KEY (`cid`);
 
---
--- Indexes for table `goverment_users`
---
-ALTER TABLE `supervisour_users`
-  ADD PRIMARY KEY (`su_id`);
+-- --
+-- -- Indexes for table `goverment_users`
+-- --
+-- ALTER TABLE `supervisour_users`
+--   ADD PRIMARY KEY (`su_id`);
 
---
--- Indexes for table `site_table`
---
-ALTER TABLE `site_table`
-  ADD PRIMARY KEY (`sid`);
+-- --
+-- -- Indexes for table `site_table`
+-- --
+-- ALTER TABLE `site_table`
+--   ADD PRIMARY KEY (`sid`);
 
---
--- Indexes for table `super_req_table`
---
-ALTER TABLE `super_req_table`
-  ADD PRIMARY KEY (`rid`);
+-- --
+-- -- Indexes for table `super_req_table`
+-- --
+-- ALTER TABLE `super_req_table`
+--   ADD PRIMARY KEY (`rid`);
 
---
--- AUTO_INCREMENT for dumped tables
---
+-- --
+-- -- AUTO_INCREMENT for dumped tables
+-- --
 
---
--- AUTO_INCREMENT for table `employee_table`
---
-ALTER TABLE `employee_table`
-  MODIFY `eid` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `goverment_users`
---
-ALTER TABLE `goverment_users`
-  MODIFY `gid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `contract_users`
---
-ALTER TABLE `contract_users`
-  MODIFY `cid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `supervisour_users`
---
-ALTER TABLE `supervisour_users`
-  MODIFY `su_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `site_table`
---
-ALTER TABLE `site_table`
-  MODIFY `sid` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `super_req_table`
---
-ALTER TABLE `super_req_table`
-  MODIFY `rid` int(11) NOT NULL AUTO_INCREMENT;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+-- --
+-- -- AUTO_INCREMENT for table `employee_table`
+-- --
+-- ALTER TABLE `employee_table`
+--   MODIFY `eid` int(11) NOT NULL AUTO_INCREMENT;
+-- --
+-- -- AUTO_INCREMENT for table `goverment_users`
+-- --
+-- ALTER TABLE `goverment_users`
+--   MODIFY `gid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+-- --
+-- -- AUTO_INCREMENT for table `contract_users`
+-- --
+-- ALTER TABLE `contract_users`
+--   MODIFY `cid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+-- --
+-- -- AUTO_INCREMENT for table `supervisour_users`
+-- --
+-- ALTER TABLE `supervisour_users`
+--   MODIFY `su_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+-- --
+-- -- AUTO_INCREMENT for table `site_table`
+-- --
+-- ALTER TABLE `site_table`
+--   MODIFY `sid` int(11) NOT NULL AUTO_INCREMENT;
+-- --
+-- -- AUTO_INCREMENT for table `super_req_table`
+-- --
+-- ALTER TABLE `super_req_table`
+--   MODIFY `rid` int(11) NOT NULL AUTO_INCREMENT;
+-- /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+-- /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+-- /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
